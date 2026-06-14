@@ -1,0 +1,13 @@
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\constant\Constant.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\dataprovider\ConfigFileReader.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\dataprovider\LocatorsFileReader.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\enums\EnvironmentType.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\enums\WebBrowserType.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\exception\CustomException.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\managers\FileReaderManager.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\managers\PlaywrightManager.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\utils\AESUtils.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\utils\CommonUtils.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\utils\EmailUtils.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\utils\ExcelUtils.java
+C:\Users\Upendra Reddy\Desktop\AutomationFramworks\Playwright_Java_Framework\src\main\java\com\Automation\baseline\utils\PlaywrightUtils.java

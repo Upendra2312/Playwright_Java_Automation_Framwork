@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 48.54 s <<< FAILURE! -- in TestSuite
+com.Automation.baseline.testrunner.TestRunner.runScenario["Login with valid credentials", "Optional[Login Functionality]"](1) -- Time elapsed: 9.595 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "locString" is null
+	at com.Automation.baseline.utils.PlaywrightUtils.getElement(PlaywrightUtils.java:46)
+	at com.Automation.baseline.pageobjects.LoginPage.enterLoginDetails(LoginPage.java:20)
+	at com.Automation.baseline.steps.StepFile.user_login_with_username_and_password(StepFile.java:17)
+	at ✽.User login with "upendra" and "upendra23"(file:///C:/Users/Upendra%20Reddy/Desktop/AutomationFramworks/Playwright_Java_Framework/src/test/resources/Feature/07_Login.feature:5)
+

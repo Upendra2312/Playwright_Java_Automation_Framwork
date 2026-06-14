@@ -1,0 +1,77 @@
+trigger: none
+pool:
+  vmImage: 'windows-latest'
+
+# variables:
+#   system.debug: true  # Enable detailed logs for troubleshooting
+
+stages:
+  # Stage 1: Smoke Tests
+  - stage: SmokeTests
+    displayName: Run Smoke Tests
+    jobs:
+      - job: RunSmokeTests
+        displayName: Smoke Test Job
+        steps:
+          # Step 2: Build Project for Smoke Tests
+          - script: |
+              mvn clean install -DskipTests
+            displayName: 'Build Project for Smoke Tests'
+
+          # Step 3: Execute Smoke Tests
+          - script: |
+              mvn test -Dtest=SmokeTestRunner
+            displayName: 'Execute Smoke Tests'
+
+          # Step 4: Publish Smoke Test Results
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: '**/surefire-reports/*.xml'
+            displayName: 'Publish Smoke Test Results'
+
+          # Step 5: Publish Smoke Test Artifacts
+          - task: PublishPipelineArtifact@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/target/test-output1/'
+              artifactName: 'SmokeTestResults'
+            condition: succeeded()
+            displayName: 'Publish Smoke Test Artifacts'
+
+
+  # Stage 2: Regression Tests
+  - stage: RegressionTests
+    displayName: Run Regression Tests
+    dependsOn: SmokeTests
+    condition: succeeded()
+    jobs:
+      - job: RunRegressionTests
+        displayName: Regression Test Job
+        timeoutInMinutes: 240  # Set timeout to 4 hours (240 minutes)
+        steps:
+          # Step 1: Install Maven
+          # Step 2: Build Project for Regression Tests
+          - script: |
+              mvn clean install -DskipTests
+            displayName: 'Build Project for Regression Tests'
+
+          # Step 3: Execute Regression Tests
+          - script: |
+              mvn test -Dtest=RegressionTestrunner
+            displayName: 'Execute Regression Tests'
+
+          # Step 4: Publish Regression Test Results
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: '**/surefire-reports/*.xml'
+            displayName: 'Publish Regression Test Results'
+
+          # Step 5: Publish Regression Test Artifacts
+          - task: PublishPipelineArtifact@1
+            inputs:
+              pathToPublish: '$(System.DefaultWorkingDirectory)/target/test-output1/'
+              artifactName: 'RegressionTestResults'
+            condition: succeeded()
+            displayName: 'Publish Regression Test Artifacts'
+

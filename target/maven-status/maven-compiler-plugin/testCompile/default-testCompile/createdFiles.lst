@@ -1,0 +1,4 @@
+com\Automation\baseline\testrunner\TestRunner.class
+com\Automation\baseline\steps\StepFile.class
+com\Automation\baseline\hooks\Hooks.class
+com\Automation\baseline\pageobjects\LoginPage.class
